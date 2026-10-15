@@ -36,7 +36,7 @@ npm run dev                   # http://localhost:5173  (the dev server proxies /
 ```
 **Demo accounts** (after `npm run demo:setup`, local databases only): see `docs/DEMO_ACCOUNTS.md` and `credentials/demo-login-credentials.csv`.
 Quick start: `admin.female@example.test` / `Admin@Demo2026`, `warden.a@example.test` / `Warden@Demo2026`,
-`hb-g1-001@students.example.test` / `Student@Demo2026`. Accounts you create with `create-admin` or the Students page must change their temporary password at first sign-in.
+`hb-g1-005@students.example.test` / `Student@Demo2026`. Accounts you create with `create-admin` or the Students page must change their temporary password at first sign-in.
 Signing out: avatar menu (top right) → **Sign out**, the **Sign out** button at the bottom of the sidebar, or **My profile**.
 Upgrading from the old ZIP? Just run `npm run db:migrate` — existing tables are kept and the new columns/indexes are added.
 
