@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+credentials/
+*.log
+.DS_Store
+coverage/
+# Lockfiles ARE committed (reproducible, auditable installs): do not ignore package-lock.json.
+*.pem

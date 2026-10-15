@@ -1,0 +1,35 @@
+# Render Blueprint: one free Docker web service that serves the API *and* the built React app.
+# Needs an external MySQL 8 database (Render has no managed MySQL). See docs/DEPLOYMENT.md.
+services:
+  - type: web
+    name: hostelbuddy
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DB_POOL
+        value: "5"
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_SSL
+        value: "true"
+      - key: DB_SSL_INSECURE
+        value: "false"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL_CA_BASE64
+        sync: false

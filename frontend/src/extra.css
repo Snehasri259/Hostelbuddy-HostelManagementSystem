@@ -1,0 +1,183 @@
+/* Additions on top of styles.css */
+.pager{display:flex;align-items:center;justify-content:center;gap:14px;padding:14px;border-top:1px solid var(--line);font-size:12px;color:var(--slate)}
+.pager .mini-btn:disabled{opacity:.45;cursor:not-allowed}
+.mini-btn.danger{color:#a3342b;border-color:#e8c6c2}
+.field-hint{font-size:11px;color:var(--muted);margin-top:4px;display:block}
+.login-success{background:#e8f2ee;color:#2f6a5f;border:1px solid #cfe3dc;border-radius:10px;padding:10px 12px;font-size:12px;margin:12px 0;line-height:1.5}
+.copy-box{display:flex;gap:8px;align-items:stretch;margin-top:10px}
+.copy-box input{flex:1;font-size:11px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:#fbfaf7;min-width:0}
+.alloc-grid{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:10px 0 4px;font-size:13px}
+.alloc-grid dt{color:var(--muted)}.alloc-grid dd{margin:0;font-weight:600;color:var(--navy)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.centered-card{min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--ivory)}
+.centered-card .login-form-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 30px;box-shadow:var(--shadow);width:100%;max-width:440px}
+.table-wrap td .inline-actions{flex-wrap:wrap}
+.nav-item[aria-current="page"]{background:#2d4566;color:#fff;box-shadow:inset 3px 0 var(--gold)}
+.status-out,.status-graduated{background:#e8eef7;color:#2c4f84}.status-out i,.status-graduated i{background:#2c4f84}
+/* ---- Contrast fixes (WCAG AA, generated) ---- */
+.crumb>span:first-child{color:#656c75}
+.today{color:#626c79}
+.eyebrow{color:#656d76}
+.page-heading p{color:#656d78}
+.float-note small{color:#646d79}
+.stat-icon.gold{color:#816936}
+.stat-note{color:#656d76}
+.donut span{color:#656d76}
+.legend-row{color:#646d7a}
+.detail-foot{color:#656d76}
+.panel-bottom-note{color:#676d73}
+.panel-bottom-note span{color:#676c73}
+.notice-icon.n1{color:#7d6a3d}
+.notice-copy p{color:#626c79}
+.notice-copy small{color:#666c71}
+.preview-copy span{color:#656d75}
+.status-pending,.status-open,.status-in-progress,.status-overdue{color:#82672e}
+.status-rejected,.status-inactive,.status-high,.status-closed,.status-maintenance{color:#9a5a52}
+.status-medium{color:#7e6938}
+.empty-state p{color:#656d76}
+.footer{color:#666c72}
+.search-box{color:#666d75}
+.search-box button{color:#666d75}
+th{color:#656c75}
+.person-cell small{color:#656d76}
+.sub-cell{color:#656d76}
+.table-footer{color:#656d75}
+.notice-card small{color:#666c72}
+.notice-card-meta{color:#656d71}
+.reject-btn{color:#9a5a52}
+.full-notification small{color:#656d76}
+.login-panel-top{color:#656c73}
+.mini-mark{color:#606d7c}
+.login-welcome .eyebrow{color:#5e6f6b}
+.login-welcome p{color:#646d75}
+.input-wrap{color:#646d76}
+.input-wrap input::placeholder{color:#686c71}
+.eye-btn{color:#646d76}
+.secure-note{color:#666d72}
+.secure-note svg{color:#537266}
+.login-panel-foot{color:#686c70}
+.eyebrow,.login-welcome .eyebrow{font-weight:700}
+
+/* ---- Sidebar: footer is always visible, menu scrolls if the screen is short ---- */
+.sidebar{height:100vh;height:100dvh;overflow:hidden}
+.sidebar nav{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:2px}
+.sidebar-bottom{flex-shrink:0;margin-top:10px}
+.profile-link{width:100%;background:none;border:0;border-top:1px solid rgba(255,255,255,.14);cursor:pointer;color:inherit;text-align:left;font:inherit;padding:14px 5px 10px;border-radius:0}
+.profile-link:hover .profile-text b{text-decoration:underline}
+.sidebar-signout{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font:600 14px 'Plus Jakarta Sans',Inter,sans-serif;cursor:pointer;transition:background .15s,color .15s}
+.sidebar-signout:hover,.sidebar-signout:focus-visible{background:#fff;color:var(--navy)}
+
+/* ---- Account menu in the top bar ---- */
+.user-menu{position:relative}
+.user-menu-btn{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 10px 4px 4px;cursor:pointer;color:var(--navy);font:600 14px Inter,sans-serif}
+.user-menu-btn:hover{border-color:#c9cdd3}
+.user-menu-btn .top-avatar{margin:0}
+.menu-pop{position:absolute;right:0;top:calc(100% + 8px);width:270px;max-width:calc(100vw - 24px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 50px rgba(23,43,77,.2);padding:8px;z-index:40}
+.menu-head{padding:10px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:6px;display:flex;flex-direction:column;gap:2px}
+.menu-head b{font-size:15px}.menu-head span{color:#4a5a70;font-size:13px;word-break:break-all}.menu-head small{color:#4a5a70;font-size:12.5px}
+.menu-pop button{display:flex;gap:10px;align-items:center;width:100%;padding:12px;border:0;background:none;border-radius:10px;cursor:pointer;font:500 14px Inter,sans-serif;color:var(--navy);text-align:left}
+.menu-pop button:hover,.menu-pop button:focus-visible{background:#f3f1ec}
+.menu-pop .menu-danger{color:#a3342b;font-weight:600}
+
+/* ---- Profile page ---- */
+.profile-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px;align-items:start}
+.profile-card{padding:24px}
+.profile-hero{display:flex;gap:18px;align-items:center;margin-bottom:14px}
+.profile-avatar{flex:0 0 auto;width:68px;height:68px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:700 22px 'Plus Jakarta Sans',Inter,sans-serif}
+.profile-hero h2{margin:0 0 2px;font-size:21px}.profile-hero p{margin:0 0 8px;color:#4a5a70;font-size:14px;word-break:break-all}
+.profile-details{grid-template-columns:minmax(110px,auto) 1fr;padding-top:12px;border-top:1px solid var(--line)}
+.profile-details dd{word-break:break-word}
+.signout-btn{margin-top:20px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:12px;border:1px solid #e3b9b4;background:#fdf3f2;color:#a3342b;font:700 14px 'Plus Jakarta Sans',Inter,sans-serif;cursor:pointer}
+.signout-btn:hover{background:#a3342b;color:#fff;border-color:#a3342b}
+.form-grid.single{grid-template-columns:1fr;padding:6px 0 0}
+.alloc-grid dt,.alloc-grid dd{font-size:14px}
+
+/* ---- Focus + touch ---- */
+:focus-visible{outline:3px solid #2f6f9f;outline-offset:2px}
+button,.nav-item,.mini-btn,.approve-btn,.reject-btn{min-height:38px}
+.icon-btn{min-width:42px;min-height:42px}
+@media(max-width:900px){.profile-grid{grid-template-columns:1fr}.user-menu-name{display:none}.user-menu-btn{padding:4px 8px 4px 4px}}
+
+/* ---- Tables become stacked cards on phones (no sideways scrolling) ---- */
+@media(max-width:700px){
+  .table-wrap{padding:10px 12px;overflow:visible}
+  .table-wrap table{min-width:0!important;width:100%}
+  .table-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .table-wrap table,.table-wrap tbody,.table-wrap tr,.table-wrap td{display:block;width:100%}
+  .table-wrap tr{border:1px solid var(--line);border-radius:14px;margin:0 0 12px;padding:6px 14px;background:#fff}
+  .table-wrap td{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;padding:10px 0!important;border:0!important;border-bottom:1px dashed var(--line)!important;text-align:right;overflow-wrap:anywhere}
+  .table-wrap td:last-child{border-bottom:0!important}
+  .table-wrap td::before{content:attr(data-label);flex:0 0 36%;text-align:left;font-weight:700;font-size:12px;letter-spacing:.04em;color:#4a5a70;text-transform:uppercase}
+  .table-wrap td>*{min-width:0;text-align:right}
+  .table-wrap td .person-cell{justify-content:flex-end;text-align:right}
+  .table-wrap td .sub-cell{display:block}
+  .table-wrap td:empty{display:none}
+  .inline-actions{justify-content:flex-end}
+  .profile-card{padding:18px 16px}.profile-hero{align-items:flex-start}
+  .modal-card{max-height:92vh;overflow:auto}
+  .menu-pop{position:fixed;left:12px;right:12px;top:68px;width:auto;max-width:none}
+}
+@media(max-width:380px){.topbar .notification-btn{display:none}}
+
+/* ---- Contrast on tinted backgrounds (verified in-browser against AA 4.5:1) ---- */
+:root{--muted:#566679}
+.status-pill{color:#44546a}
+.status-active,.status-verified,.status-approved,.status-resolved,.status-returned,.status-available{color:#235a47}
+.status-pending,.status-open,.status-in-progress,.status-overdue,.status-medium{color:#6f5210}
+.status-rejected,.status-inactive,.status-high,.status-closed,.status-cancelled{color:#8f342c}
+.status-out,.status-graduated{color:#1f4377}
+.approve-btn{color:#235a47}.reject-btn{color:#8f342c}
+.mini-btn,.response-text{color:#2f5a57}.mini-btn.danger{color:#8f342c}
+.person-avatar{color:#2c5754}
+.full-notification p,.notice-copy p{color:#44546a}
+.field-hint{font-size:12.5px;color:#4a5a70}
+small{font-size:12.5px}
+.response-text{font-size:12.5px}
+
+/* phone cards: secondary line sits under its value */
+@media(max-width:700px){
+  .table-wrap td{flex-wrap:wrap}
+  .table-wrap td .sub-cell,.table-wrap td>small{flex:1 1 100%;text-align:right}
+  .data-panel{padding-left:0;padding-right:0}
+}
+
+/* ---- Splash ---- */
+.splash-screen{padding:24px;text-align:center}
+.splash-name{font:800 27px 'Plus Jakarta Sans',Inter,sans-serif;color:var(--navy);letter-spacing:-.3px}
+.splash-screen>span{color:#4a5a70}
+.splash-bar{width:min(240px,70vw);height:5px;background:#e4e8e3;border-radius:6px;margin-top:26px;overflow:hidden}
+.splash-bar i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#477c78,#c4a66a);animation:splash-fill var(--dur,3.2s) cubic-bezier(.25,.1,.25,1) forwards}
+.splash-msg{margin:14px 0 0;min-height:20px;font-size:13.5px;color:#4a5a70;animation:splash-msg-in .5s ease both}
+@keyframes splash-fill{to{width:100%}}
+@keyframes splash-msg-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ---- Outpass progress + gate code ---- */
+.steps{list-style:none;display:flex;gap:6px;margin:10px 0 0;padding:0;flex-wrap:wrap}
+.steps li{display:flex;align-items:center;gap:5px;font-size:12px;color:#5b6878}
+.steps li i{width:9px;height:9px;border-radius:50%;border:2px solid #b8c0ca;background:#fff;flex:0 0 auto}
+.steps li.done i{background:#2f6a58;border-color:#2f6a58}.steps li.done{color:#235a47}
+.steps li.now i{border-color:#2f6a58;box-shadow:0 0 0 3px #2f6a5829}.steps li.now{color:#172b4d;font-weight:700}
+.steps li.late i{background:#a3342b;border-color:#a3342b;box-shadow:0 0 0 3px #a3342b2b}.steps li.late{color:#8f342c;font-weight:700}
+.gate-code{display:block;margin-top:8px;color:#172b4d}.gate-code b{font:700 13.5px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1.5px;background:#f3efe4;border:1px dashed #c4a66a;border-radius:6px;padding:2px 8px;margin-left:4px}
+
+/* ---- Gate check + transfer modals ---- */
+.gate-box{padding:20px 22px 22px}
+.gate-form{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.gate-form .form-field{flex:1 1 200px}
+.mono-input{font:700 18px ui-monospace,SFMono-Regular,Menlo,monospace!important;letter-spacing:3px;text-transform:uppercase}
+.gate-result{margin-top:18px;border:1px solid var(--line);border-radius:14px;padding:16px;background:#fbfaf7}
+.gate-result-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:6px}
+.gate-result-head small{display:block;color:#4a5a70;margin-top:2px}
+.gate-result .primary-btn{width:100%;margin-top:12px;justify-content:center}
+.transfer-summary{display:flex;flex-direction:column;gap:2px;background:#f3f1ec;border-radius:12px;padding:12px 14px}
+.transfer-summary span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#4a5a70;font-weight:700}
+.transfer-summary small{color:#4a5a70}
+.wide{grid-column:1/-1}
+
+/* ---- Loading skeleton ---- */
+.skeleton-list{padding:8px 18px 18px;display:grid;gap:12px}
+.skeleton-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+.skeleton-row i{display:block;height:44px;border-radius:10px;background:linear-gradient(90deg,#efede7 25%,#f8f6f1 45%,#efede7 65%);background-size:200% 100%;animation:skeleton 1.3s linear infinite}
+@keyframes skeleton{to{background-position:-200% 0}}
+@media(prefers-reduced-motion:reduce){.skeleton-row i,.splash-msg{animation:none}.splash-bar i{animation-duration:.9s}}
+.empty-state .primary-btn{margin-top:14px}

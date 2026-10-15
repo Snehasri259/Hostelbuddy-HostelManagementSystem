@@ -1,0 +1,50 @@
+# Quick production-like run on one machine:  cp .env.example .env  (edit secrets)  &&  docker compose up -d --build
+# For real internet deployment put a TLS reverse proxy (Caddy / nginx / your host's HTTPS) in front of port 5000.
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
+      MYSQL_DATABASE: hostelbuddy
+      MYSQL_USER: hostelbuddy_app
+      MYSQL_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${APP_PORT:-5000}:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      DB_HOST: db
+      DB_USER: hostelbuddy_app
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: hostelbuddy
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+      APP_URL: ${APP_URL:-http://localhost:5000}
+      FRONTEND_ORIGIN: ${APP_URL:-http://localhost:5000}
+      # Plain-HTTP local trial only. With real HTTPS remove both lines (cookies become Secure automatically).
+      ALLOW_INSECURE_HTTP: ${ALLOW_INSECURE_HTTP:-false}
+      COOKIE_SECURE: ${COOKIE_SECURE:-}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-HostelBuddy <noreply@localhost>}
+
+volumes:
+  dbdata:
